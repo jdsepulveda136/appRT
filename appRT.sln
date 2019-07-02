@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29021.104
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "appRT", "appRT.csproj", "{7DB70196-AD41-44C5-8CF0-E248124D20EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DB70196-AD41-44C5-8CF0-E248124D20EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DB70196-AD41-44C5-8CF0-E248124D20EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DB70196-AD41-44C5-8CF0-E248124D20EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DB70196-AD41-44C5-8CF0-E248124D20EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {876784E6-60E2-4931-A423-74335558D303}
+	EndGlobalSection
+EndGlobal
