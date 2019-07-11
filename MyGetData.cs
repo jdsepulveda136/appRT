@@ -6,14 +6,14 @@ namespace appRT
     class MyGetData
     {
 
-        public DataTable BuscaDados(string SC)
+        public DataTable BuscaDados(string string_connection, string ssql)
         {
             //criar uma conexão:
-            SqlConnection C = new SqlConnection(SC);
+            SqlConnection C = new SqlConnection(string_connection);
             C.Open();
             //criar comando SQL para extrair os dados pretendidos:
             SqlCommand command = C.CreateCommand();
-            command.CommandText = "SELECT * from T_clientes";
+            command.CommandText = ssql ;
             //trazer dados da tab. especif. p/ uma "tab." em memória:
             SqlDataAdapter da = new SqlDataAdapter(command);
             var dt = new DataTable();
