@@ -65,6 +65,7 @@
       <DependentUpon>Form3Clientes.cs</DependentUpon>
     </Compile>
     <Compile Include="MyGetData.cs" />
+    <Compile Include="MyStatistics.cs" />
     <Compile Include="MyStringConnection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

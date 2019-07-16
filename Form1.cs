@@ -27,11 +27,12 @@ namespace appRT
             cmb_clientes.DataSource = data.BuscaDados(ligabd, query_clientes);
             cmb_clientes.DisplayMember = "nome_cliente";
             cmb_clientes.ValueMember = "id";
+            cmb_clientes.SelectedValue = 1122;
 
             cmb_funcionarios.DataSource = data.BuscaDados(ligabd, query_funcionarios);
             cmb_funcionarios.DisplayMember = "nome_funcionario";
             cmb_funcionarios.ValueMember = "Id";
-
+            cmb_funcionarios.SelectedValue = 10;
 
         }
 
@@ -171,11 +172,60 @@ namespace appRT
 
             string cmb_cli = cmb_clientes.SelectedValue.ToString();
 
-            string query = "Select * from T_registo_de_tempos where cod_cliente= '" + cmb_cli + "' and cod_funcionario= '" + cmb_func + "'";
+            string query = "Select Id as Código, cod_cliente as Cliente, cod_funcionario as Funcionário, data as Data, tempo as Duração, descritivo as Descrição from T_registo_de_tempos where cod_cliente= '" + cmb_cli + "' and cod_funcionario= '" + cmb_func + "'";
 
             data_tempos.DataSource = data.BuscaDados(ligabd, query);
 
         }
 
+        private void Txt_total_minutos_TextChanged(object sender, EventArgs e){}
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            float soma = 0;
+
+            for (int i = 0; i < data_tempos.Rows.Count; i++)
+            {
+                soma = soma + Convert.ToInt16(data_tempos.Rows[i].Cells[4].Value);
+            }
+
+            txt_total_minutos.Text = Convert.ToString(soma);
+        }
+
+        private void Bt_tot_min_mensal_Click(object sender, EventArgs e)
+        {
+            DateTime mes_grid;
+            DateTime mes_hoje = DateTime.Now;
+            float soma = 0;
+
+            for (int i = 0; i < data_tempos.Rows.Count; i++)
+            {
+                //d = Convert.ToDateTime(grid.Rows[i].Cells[3].Value);
+                mes_grid = Convert.ToDateTime(data_tempos.Rows[i].Cells[3].Value);
+                if (mes_hoje.Month==mes_grid.Month)
+                {
+                    soma = soma + Convert.ToInt16(data_tempos.Rows[i].Cells[4].Value);
+                }
+            }
+
+            txt_min_mensal.Text = Convert.ToString(soma);
+        }
+
+        private void Bt_stats_Click(object sender, EventArgs e)
+        {
+            MyStatistics stats = new MyStatistics();
+
+            data_stats.Rows.Add();
+            stats.ContaRegistos(data_stats);
+            data_stats.Rows.Add();
+            stats.ContaRegistoAno(data_stats);
+            data_stats.Rows.Add();
+            stats.ContaRegistoMes(data_stats);
+            data_stats.Rows.Add();
+            int cod_func = cmb_funcionarios
+            MessageBox.Show(cod_func);
+            //stats.ContaRegistoFunc(data_stats, cod_func);
+
+        }
     }
 }
