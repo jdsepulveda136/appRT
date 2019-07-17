@@ -215,6 +215,13 @@ namespace appRT
         {
             MyStatistics stats = new MyStatistics();
 
+            int cod_func = Convert.ToInt32(cmb_funcionarios.SelectedValue);
+            string nome_func = Convert.ToString(cmb_funcionarios.Text);
+            int cod_cli = Convert.ToInt32(cmb_clientes.SelectedValue);
+            string nome_cli = Convert.ToString(cmb_clientes.Text);
+
+
+
             data_stats.Rows.Add();
             stats.ContaRegistos(data_stats);
             data_stats.Rows.Add();
@@ -222,9 +229,11 @@ namespace appRT
             data_stats.Rows.Add();
             stats.ContaRegistoMes(data_stats);
             data_stats.Rows.Add();
-            int cod_func = cmb_funcionarios
-            MessageBox.Show(cod_func);
-            //stats.ContaRegistoFunc(data_stats, cod_func);
+            stats.ContaRegistoFunc(data_stats, cod_func, nome_func);
+            data_stats.Rows.Add();
+            stats.SomaTempoFunc(data_stats, cod_func, nome_func);
+            data_stats.Rows.Add();
+            stats.ContaRegistoCliente(data_stats, cod_cli, nome_cli);
 
         }
     }

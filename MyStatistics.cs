@@ -50,18 +50,43 @@ namespace appRT
             data_stats.Rows[2].Cells[1].Value = valor.Rows[0][0];
         }
 
-        public void ContaRegistoFunc(DataGridView data_stats, string nome_func)
+        public void ContaRegistoFunc(DataGridView data_stats, int cod_func, string nome_func)
         {
             MyGetData data = new MyGetData();
             string ligabd = MyStringConnection.SC1;
             string ano = Convert.ToString(DateTime.Now.Year);
-            string query = "select count (*) as ano from T_registo_de_tempos where YEAR(data) = YEAR(getdate()) and MONTH(data)=MONTH(getdate()) and cod_funcionario=" + nome_func;
+            string query = "select count (*) as ano from T_registo_de_tempos where YEAR(data) = YEAR(getdate()) and MONTH(data)=MONTH(getdate()) and cod_funcionario=" + cod_func;
 
 
             data_stats.Rows[3].Cells[0].Value = nome_func + " / mês";
-            //DataTable valor = data.BuscaDados(ligabd, query);
-            //data_stats.Rows[3].Cells[1].Value = valor.Rows[0][0];
-            MessageBox.Show(query);
+            DataTable valor = data.BuscaDados(ligabd, query);
+            data_stats.Rows[3].Cells[1].Value = valor.Rows[0][0];
+            //MessageBox.Show(query);
+        }
+
+        public void SomaTempoFunc(DataGridView data_stats, int cod_func, string nome_func)
+        {
+            MyGetData data = new MyGetData();
+            string ligabd = MyStringConnection.SC1;
+            string query = "select sum (tempo) as ano from T_registo_de_tempos where YEAR(data) = YEAR(getdate()) and MONTH(data)=MONTH(getdate()) and cod_funcionario=" + cod_func;
+
+            data_stats.Rows[4].Cells[0].Value = nome_func + " / mês";
+            DataTable valor = data.BuscaDados(ligabd, query);
+            TimeSpan horas = TimeSpan.FromMinutes(Convert.ToInt32(valor.Rows[0][0]));
+            string tempo = horas.ToString(@"hh\:mm");
+            data_stats.Rows[4].Cells[1].Value = valor.Rows[0][0] + " (" + tempo + ")";
+        }
+
+        public void ContaRegistoCliente(DataGridView data_stats, int cod_cli, string nome_cli)
+        {
+            MyGetData data = new MyGetData();
+            string ligabd = MyStringConnection.SC1;
+            string query = "select count (*) as ano from T_registo_de_tempos where YEAR(data) = YEAR(getdate()) and MONTH(data)=MONTH(getdate()) and cod_cliente=" + cod_cli;
+
+
+            data_stats.Rows[5].Cells[0].Value = nome_cli + " / mês";
+            DataTable valor = data.BuscaDados(ligabd, query);
+            data_stats.Rows[5].Cells[1].Value = valor.Rows[0][0];
         }
     }
 }
