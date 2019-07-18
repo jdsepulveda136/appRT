@@ -149,6 +149,7 @@ namespace appRT
                 cmb_funcionarios.DataSource = tabela_aux;
                 cmb_funcionarios.DisplayMember = "nome_funcionario";
                 cmb_funcionarios.ValueMember = "id";
+
             }
         }
 
@@ -224,7 +225,7 @@ namespace appRT
 
             data_stats.Rows.Add();
             stats.ContaRegistos(data_stats);
-            data_stats.Rows.Add();
+            
             stats.ContaRegistoAno(data_stats);
             data_stats.Rows.Add();
             stats.ContaRegistoMes(data_stats);
@@ -234,7 +235,8 @@ namespace appRT
             stats.SomaTempoFunc(data_stats, cod_func, nome_func);
             data_stats.Rows.Add();
             stats.ContaRegistoCliente(data_stats, cod_cli, nome_cli);
-
+            data_stats.Rows.Add();
+            stats.SomaTempoCliente(data_stats, cod_cli, nome_cli);
         }
     }
 }

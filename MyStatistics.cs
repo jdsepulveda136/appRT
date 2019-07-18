@@ -31,9 +31,10 @@ namespace appRT
             string query = "select count (*) as ano from T_registo_de_tempos where YEAR(data) = YEAR(getdate())";
 
             
-            data_stats.Rows[1].Cells[0].Value = "Registos este ano";
+            //data_stats.Rows[1].Cells[0].Value = "Registos este ano";
             DataTable valor = data.BuscaDados(ligabd, query);
-            data_stats.Rows[1].Cells[1].Value = valor.Rows[0][0];
+           // data_stats.Rows[1].Cells[1].Value = valor.Rows[0][0];
+            data_stats.Rows.Add("Registos este ano", valor.Rows[0][0]);
 
         }
 
@@ -60,7 +61,7 @@ namespace appRT
 
             data_stats.Rows[3].Cells[0].Value = nome_func + " / mês";
             DataTable valor = data.BuscaDados(ligabd, query);
-            data_stats.Rows[3].Cells[1].Value = valor.Rows[0][0];
+            data_stats.Rows[3].Cells[1].Value = valor.Rows[0][0] + " registos";
             //MessageBox.Show(query);
         }
 
@@ -74,7 +75,7 @@ namespace appRT
             DataTable valor = data.BuscaDados(ligabd, query);
             TimeSpan horas = TimeSpan.FromMinutes(Convert.ToInt32(valor.Rows[0][0]));
             string tempo = horas.ToString(@"hh\:mm");
-            data_stats.Rows[4].Cells[1].Value = valor.Rows[0][0] + " (" + tempo + ")";
+            data_stats.Rows[4].Cells[1].Value = valor.Rows[0][0] + " min. (" + tempo + ")";
         }
 
         public void ContaRegistoCliente(DataGridView data_stats, int cod_cli, string nome_cli)
@@ -86,7 +87,21 @@ namespace appRT
 
             data_stats.Rows[5].Cells[0].Value = nome_cli + " / mês";
             DataTable valor = data.BuscaDados(ligabd, query);
-            data_stats.Rows[5].Cells[1].Value = valor.Rows[0][0];
+            data_stats.Rows[5].Cells[1].Value = valor.Rows[0][0] + " registos";
+        }
+
+        public void SomaTempoCliente(DataGridView data_stats, int cod_cli, string nome_cli)
+        {
+            MyGetData data = new MyGetData();
+            string ligabd = MyStringConnection.SC1;
+            string query = "select sum (tempo) as ano from T_registo_de_tempos where YEAR(data) = YEAR(getdate()) and MONTH(data)=MONTH(getdate()) and cod_cliente=" + cod_cli;
+
+            data_stats.Rows[6].Cells[0].Value = nome_cli + " / mês";
+            DataTable valor = data.BuscaDados(ligabd, query);
+            TimeSpan horas = TimeSpan.FromMinutes(Convert.ToInt32(valor.Rows[0][0]));
+            string tempo = horas.ToString(@"hh\:mm");
+            data_stats.Rows[6].Cells[1].Value = valor.Rows[0][0] + " min. (" + tempo + ")";
+
         }
     }
 }

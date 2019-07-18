@@ -44,9 +44,11 @@
             this.bt_tot_min_mensal = new System.Windows.Forms.Button();
             this.txt_min_mensal = new System.Windows.Forms.TextBox();
             this.data_stats = new System.Windows.Forms.DataGridView();
-            this.bt_stats = new System.Windows.Forms.Button();
             this.estatistica = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_stats = new System.Windows.Forms.Button();
+            this.lb_funcionarios = new System.Windows.Forms.ListBox();
+            this.lb_clientes = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_tempos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_stats)).BeginInit();
@@ -55,7 +57,7 @@
             // bt_sair
             // 
             this.bt_sair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_sair.Location = new System.Drawing.Point(887, 503);
+            this.bt_sair.Location = new System.Drawing.Point(937, 503);
             this.bt_sair.Name = "bt_sair";
             this.bt_sair.Size = new System.Drawing.Size(75, 23);
             this.bt_sair.TabIndex = 4;
@@ -69,7 +71,7 @@
             this.listagensToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(974, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1024, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
@@ -103,9 +105,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.data_tempos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_tempos.Location = new System.Drawing.Point(13, 94);
+            this.data_tempos.Location = new System.Drawing.Point(139, 94);
             this.data_tempos.Name = "data_tempos";
-            this.data_tempos.Size = new System.Drawing.Size(729, 265);
+            this.data_tempos.Size = new System.Drawing.Size(562, 265);
             this.data_tempos.TabIndex = 6;
             // 
             // cmb_clientes
@@ -187,18 +189,33 @@
             // 
             // data_stats
             // 
+            this.data_stats.AllowUserToAddRows = false;
+            this.data_stats.AllowUserToDeleteRows = false;
             this.data_stats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_stats.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.estatistica,
             this.valor});
-            this.data_stats.Location = new System.Drawing.Point(765, 94);
+            this.data_stats.Location = new System.Drawing.Point(833, 94);
             this.data_stats.Name = "data_stats";
-            this.data_stats.Size = new System.Drawing.Size(197, 265);
+            this.data_stats.ReadOnly = true;
+            this.data_stats.Size = new System.Drawing.Size(185, 265);
             this.data_stats.TabIndex = 17;
+            // 
+            // estatistica
+            // 
+            this.estatistica.HeaderText = "Estatística";
+            this.estatistica.Name = "estatistica";
+            this.estatistica.ReadOnly = true;
+            // 
+            // valor
+            // 
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
+            this.valor.ReadOnly = true;
             // 
             // bt_stats
             // 
-            this.bt_stats.Location = new System.Drawing.Point(765, 65);
+            this.bt_stats.Location = new System.Drawing.Point(879, 62);
             this.bt_stats.Name = "bt_stats";
             this.bt_stats.Size = new System.Drawing.Size(197, 23);
             this.bt_stats.TabIndex = 18;
@@ -206,21 +223,29 @@
             this.bt_stats.UseVisualStyleBackColor = true;
             this.bt_stats.Click += new System.EventHandler(this.Bt_stats_Click);
             // 
-            // estatistica
+            // lb_funcionarios
             // 
-            this.estatistica.HeaderText = "Estatística";
-            this.estatistica.Name = "estatistica";
+            this.lb_funcionarios.FormattingEnabled = true;
+            this.lb_funcionarios.Location = new System.Drawing.Point(707, 95);
+            this.lb_funcionarios.Name = "lb_funcionarios";
+            this.lb_funcionarios.Size = new System.Drawing.Size(120, 264);
+            this.lb_funcionarios.TabIndex = 20;
             // 
-            // valor
+            // lb_clientes
             // 
-            this.valor.HeaderText = "Valor";
-            this.valor.Name = "valor";
+            this.lb_clientes.FormattingEnabled = true;
+            this.lb_clientes.Location = new System.Drawing.Point(13, 94);
+            this.lb_clientes.Name = "lb_clientes";
+            this.lb_clientes.Size = new System.Drawing.Size(120, 264);
+            this.lb_clientes.TabIndex = 21;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 538);
+            this.ClientSize = new System.Drawing.Size(1024, 538);
+            this.Controls.Add(this.lb_clientes);
+            this.Controls.Add(this.lb_funcionarios);
             this.Controls.Add(this.bt_stats);
             this.Controls.Add(this.data_stats);
             this.Controls.Add(this.txt_min_mensal);
@@ -269,6 +294,8 @@
         private System.Windows.Forms.Button bt_stats;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatistica;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
+        private System.Windows.Forms.ListBox lb_funcionarios;
+        private System.Windows.Forms.ListBox lb_clientes;
     }
 }
 
