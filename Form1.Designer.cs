@@ -33,6 +33,7 @@
             this.listagensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estatisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.data_tempos = new System.Windows.Forms.DataGridView();
             this.cmb_clientes = new System.Windows.Forms.ComboBox();
             this.txt_filtrar_clientes = new System.Windows.Forms.TextBox();
@@ -60,7 +61,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.estatisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_tempos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_stats)).BeginInit();
@@ -115,6 +115,13 @@
             this.funcionáriosToolStripMenuItem.Text = "Funcionários";
             this.funcionáriosToolStripMenuItem.Click += new System.EventHandler(this.FuncionáriosToolStripMenuItem_Click);
             // 
+            // estatisticasToolStripMenuItem
+            // 
+            this.estatisticasToolStripMenuItem.Name = "estatisticasToolStripMenuItem";
+            this.estatisticasToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.estatisticasToolStripMenuItem.Text = "Estatisticas";
+            this.estatisticasToolStripMenuItem.Click += new System.EventHandler(this.EstatisticasToolStripMenuItem_Click);
+            // 
             // data_tempos
             // 
             this.data_tempos.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -141,7 +148,7 @@
             this.txt_filtrar_clientes.Location = new System.Drawing.Point(178, 38);
             this.txt_filtrar_clientes.Name = "txt_filtrar_clientes";
             this.txt_filtrar_clientes.Size = new System.Drawing.Size(121, 20);
-            this.txt_filtrar_clientes.TabIndex = 8;
+            this.txt_filtrar_clientes.TabIndex = 1;
             this.txt_filtrar_clientes.TextChanged += new System.EventHandler(this.Txt_filtrar_clientes_TextChanged);
             // 
             // checkedListBox1
@@ -166,7 +173,7 @@
             this.txt_funcionarios.Location = new System.Drawing.Point(432, 38);
             this.txt_funcionarios.Name = "txt_funcionarios";
             this.txt_funcionarios.Size = new System.Drawing.Size(121, 20);
-            this.txt_funcionarios.TabIndex = 0;
+            this.txt_funcionarios.TabIndex = 2;
             this.txt_funcionarios.TextChanged += new System.EventHandler(this.Txt_funcionarios_TextChanged_1);
             // 
             // txt_total_minutos
@@ -260,7 +267,7 @@
             this.pick_data.Location = new System.Drawing.Point(16, 448);
             this.pick_data.Name = "pick_data";
             this.pick_data.Size = new System.Drawing.Size(200, 20);
-            this.pick_data.TabIndex = 20;
+            this.pick_data.TabIndex = 3;
             // 
             // Duração
             // 
@@ -276,7 +283,7 @@
             this.txt_descricao.Location = new System.Drawing.Point(328, 449);
             this.txt_descricao.Name = "txt_descricao";
             this.txt_descricao.Size = new System.Drawing.Size(433, 20);
-            this.txt_descricao.TabIndex = 27;
+            this.txt_descricao.TabIndex = 5;
             this.txt_descricao.TextChanged += new System.EventHandler(this.Txt_descricao_TextChanged);
             // 
             // label4
@@ -294,7 +301,7 @@
             this.bt_inserir.Location = new System.Drawing.Point(770, 447);
             this.bt_inserir.Name = "bt_inserir";
             this.bt_inserir.Size = new System.Drawing.Size(96, 21);
-            this.bt_inserir.TabIndex = 29;
+            this.bt_inserir.TabIndex = 6;
             this.bt_inserir.Text = "Inserir";
             this.bt_inserir.UseVisualStyleBackColor = true;
             this.bt_inserir.Click += new System.EventHandler(this.Bt_inserir_Click);
@@ -311,7 +318,7 @@
             this.updown_duracao.Location = new System.Drawing.Point(222, 449);
             this.updown_duracao.Name = "updown_duracao";
             this.updown_duracao.Size = new System.Drawing.Size(100, 20);
-            this.updown_duracao.TabIndex = 31;
+            this.updown_duracao.TabIndex = 4;
             // 
             // list_clientes
             // 
@@ -355,13 +362,6 @@
             this.label7.Size = new System.Drawing.Size(97, 13);
             this.label7.TabIndex = 36;
             this.label7.Text = "Inserção de registo";
-            // 
-            // estatisticasToolStripMenuItem
-            // 
-            this.estatisticasToolStripMenuItem.Name = "estatisticasToolStripMenuItem";
-            this.estatisticasToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.estatisticasToolStripMenuItem.Text = "Estatisticas";
-            this.estatisticasToolStripMenuItem.Click += new System.EventHandler(this.EstatisticasToolStripMenuItem_Click);
             // 
             // Form1
             // 
