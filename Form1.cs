@@ -281,7 +281,8 @@ namespace appRT
             if (result == DialogResult.Yes) {
                 executa_query.BuscaDados(ligabd, query);
             }
-           
+            
+            Filtrar_lista();
 
         }
 
