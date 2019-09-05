@@ -35,100 +35,141 @@
             this.txt_search_cli = new System.Windows.Forms.TextBox();
             this.txt_search_func = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbl_clientes = new System.Windows.Forms.Label();
-            this.lbl_func = new System.Windows.Forms.Label();
+            this.lbox_clientes = new System.Windows.Forms.ListBox();
+            this.lbox_func = new System.Windows.Forms.ListBox();
+            this.data_registos = new System.Windows.Forms.DataGridView();
+            this.bt_remove = new System.Windows.Forms.Button();
+            this.bt_update = new System.Windows.Forms.Button();
+            this.bt_sair = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.data_registos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 16);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 17);
+            this.label1.Size = new System.Drawing.Size(147, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Clientes (digitar todo ou parte)";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(264, 16);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(198, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(231, 17);
+            this.label2.Size = new System.Drawing.Size(170, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Funcionários (digitar todo ou parte)";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(567, 16);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(425, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 17);
+            this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Ano (YYYY)";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(571, 73);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(428, 59);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 17);
+            this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Mês (MM)";
             // 
             // txt_search_cli
             // 
-            this.txt_search_cli.Location = new System.Drawing.Point(21, 37);
-            this.txt_search_cli.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_search_cli.Location = new System.Drawing.Point(16, 30);
             this.txt_search_cli.Name = "txt_search_cli";
-            this.txt_search_cli.Size = new System.Drawing.Size(199, 22);
+            this.txt_search_cli.Size = new System.Drawing.Size(150, 20);
             this.txt_search_cli.TabIndex = 4;
             this.txt_search_cli.TextChanged += new System.EventHandler(this.Txt_search_cli_TextChanged);
             // 
             // txt_search_func
             // 
-            this.txt_search_func.Location = new System.Drawing.Point(268, 36);
-            this.txt_search_func.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_search_func.Location = new System.Drawing.Point(201, 29);
             this.txt_search_func.Name = "txt_search_func";
-            this.txt_search_func.Size = new System.Drawing.Size(199, 22);
+            this.txt_search_func.Size = new System.Drawing.Size(150, 20);
             this.txt_search_func.TabIndex = 5;
+            this.txt_search_func.TextChanged += new System.EventHandler(this.Txt_search_func_TextChanged);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(571, 36);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(428, 29);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 6;
             // 
-            // lbl_clientes
+            // lbox_clientes
             // 
-            this.lbl_clientes.AutoSize = true;
-            this.lbl_clientes.Location = new System.Drawing.Point(21, 67);
-            this.lbl_clientes.Name = "lbl_clientes";
-            this.lbl_clientes.Size = new System.Drawing.Size(16, 17);
-            this.lbl_clientes.TabIndex = 7;
-            this.lbl_clientes.Text = "_";
+            this.lbox_clientes.FormattingEnabled = true;
+            this.lbox_clientes.Location = new System.Drawing.Point(16, 59);
+            this.lbox_clientes.Name = "lbox_clientes";
+            this.lbox_clientes.Size = new System.Drawing.Size(150, 95);
+            this.lbox_clientes.TabIndex = 7;
+            this.lbox_clientes.SelectedIndexChanged += new System.EventHandler(this.Lbox_clientes_SelectedIndexChanged);
             // 
-            // lbl_func
+            // lbox_func
             // 
-            this.lbl_func.AutoSize = true;
-            this.lbl_func.Location = new System.Drawing.Point(264, 67);
-            this.lbl_func.Name = "lbl_func";
-            this.lbl_func.Size = new System.Drawing.Size(16, 17);
-            this.lbl_func.TabIndex = 8;
-            this.lbl_func.Text = "_";
+            this.lbox_func.FormattingEnabled = true;
+            this.lbox_func.Location = new System.Drawing.Point(201, 59);
+            this.lbox_func.Name = "lbox_func";
+            this.lbox_func.Size = new System.Drawing.Size(150, 95);
+            this.lbox_func.TabIndex = 8;
+            this.lbox_func.SelectedIndexChanged += new System.EventHandler(this.Lbox_func_SelectedIndexChanged);
+            // 
+            // data_registos
+            // 
+            this.data_registos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_registos.Location = new System.Drawing.Point(16, 175);
+            this.data_registos.Name = "data_registos";
+            this.data_registos.Size = new System.Drawing.Size(772, 263);
+            this.data_registos.TabIndex = 9;
+            // 
+            // bt_remove
+            // 
+            this.bt_remove.Location = new System.Drawing.Point(16, 458);
+            this.bt_remove.Name = "bt_remove";
+            this.bt_remove.Size = new System.Drawing.Size(194, 23);
+            this.bt_remove.TabIndex = 10;
+            this.bt_remove.Text = "Remover Registo";
+            this.bt_remove.UseVisualStyleBackColor = true;
+            this.bt_remove.Click += new System.EventHandler(this.Bt_remove_Click);
+            // 
+            // bt_update
+            // 
+            this.bt_update.Location = new System.Drawing.Point(16, 487);
+            this.bt_update.Name = "bt_update";
+            this.bt_update.Size = new System.Drawing.Size(194, 23);
+            this.bt_update.TabIndex = 11;
+            this.bt_update.Text = "Actualizar registo na Base de dados";
+            this.bt_update.UseVisualStyleBackColor = true;
+            this.bt_update.Click += new System.EventHandler(this.Bt_update_Click);
+            // 
+            // bt_sair
+            // 
+            this.bt_sair.Location = new System.Drawing.Point(712, 527);
+            this.bt_sair.Name = "bt_sair";
+            this.bt_sair.Size = new System.Drawing.Size(75, 23);
+            this.bt_sair.TabIndex = 12;
+            this.bt_sair.Text = "Fechar";
+            this.bt_sair.UseVisualStyleBackColor = true;
+            this.bt_sair.Click += new System.EventHandler(this.Bt_sair_Click);
             // 
             // Form4AlteracaoDeRegistos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.lbl_func);
-            this.Controls.Add(this.lbl_clientes);
+            this.ClientSize = new System.Drawing.Size(800, 562);
+            this.Controls.Add(this.bt_sair);
+            this.Controls.Add(this.bt_update);
+            this.Controls.Add(this.bt_remove);
+            this.Controls.Add(this.data_registos);
+            this.Controls.Add(this.lbox_func);
+            this.Controls.Add(this.lbox_clientes);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txt_search_func);
             this.Controls.Add(this.txt_search_cli);
@@ -136,10 +177,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form4AlteracaoDeRegistos";
             this.Text = "Form4AlteracaoDeRegistos";
             this.Load += new System.EventHandler(this.Form4AlteracaoDeRegistos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.data_registos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,7 +195,11 @@
         private System.Windows.Forms.TextBox txt_search_cli;
         private System.Windows.Forms.TextBox txt_search_func;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lbl_clientes;
-        private System.Windows.Forms.Label lbl_func;
+        private System.Windows.Forms.ListBox lbox_clientes;
+        private System.Windows.Forms.ListBox lbox_func;
+        private System.Windows.Forms.DataGridView data_registos;
+        private System.Windows.Forms.Button bt_remove;
+        private System.Windows.Forms.Button bt_update;
+        private System.Windows.Forms.Button bt_sair;
     }
 }
