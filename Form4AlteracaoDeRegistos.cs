@@ -109,17 +109,19 @@ namespace appRT
             string id = data_registos.CurrentRow.Cells[0].Value.ToString();
             string cliente = data_registos.CurrentRow.Cells[1].Value.ToString();
             string func = data_registos.CurrentRow.Cells[2].Value.ToString();
-            string data_reg = data_registos.CurrentRow.Cells[3].Value.ToString();
+            string data_ant = data_registos.CurrentRow.Cells[3].Value.ToString();
             string tempo = data_registos.CurrentRow.Cells[4].Value.ToString();
             string desc = data_registos.CurrentRow.Cells[5].Value.ToString();
 
-            MessageBox.Show(id + "\n" + cliente + "\n" + func + "\n" + data_reg + "\n" + tempo + "\n" + desc);
-
-            DateTime data_ins = Convert.ToDateTime(data_reg).Date;
+            DateTime data_nova = Convert.ToDateTime(data_ant);
 
             string query = "update T_registo_de_tempos " +
-                           "set cod_cliente='" + cliente + "' , cod_funcionario='" + func + "' , data=" + data_ins + " , tempo=" + Convert.ToInt32(tempo) + " , descritivo='" + desc + "' " + 
-                           " where id='"+id+"'";
+                           $"set cod_cliente= {cliente} , cod_funcionario={func} , data= '{data_nova.ToShortDateString()}', tempo='{Convert.ToInt32(tempo)}', descritivo='{desc}' " +
+                           $"where id={id}";
+
+            //string query = "update T_registo_de_tempos " +
+            //              $"set cod_cliente= {cliente} , cod_funcionario={func} , tempo={Convert.ToInt32(tempo)} , descritivo='{desc}' " +
+            //              $" where id={id}";
 
             MessageBox.Show(query);
 

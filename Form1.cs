@@ -298,5 +298,12 @@ namespace appRT
         private void Data_stats_CellContentClick(object sender, DataGridViewCellEventArgs e){}
         private void Txt_descricao_TextChanged(object sender, EventArgs e){}
         private void Label4_Click(object sender, EventArgs e){}
+
+        private void AdicionarAlterarRegistosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4AlteracaoDeRegistos Form4 = new Form4AlteracaoDeRegistos();
+
+            Form4.Show();
+        }
     }
 }

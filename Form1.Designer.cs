@@ -61,6 +61,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.adicionarAlterarRegistosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_tempos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_stats)).BeginInit();
@@ -84,7 +85,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listagensToolStripMenuItem,
-            this.estatisticasToolStripMenuItem});
+            this.estatisticasToolStripMenuItem,
+            this.adicionarAlterarRegistosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(979, 24);
@@ -363,6 +365,13 @@
             this.label7.TabIndex = 36;
             this.label7.Text = "Inserção de registo";
             // 
+            // adicionarAlterarRegistosToolStripMenuItem
+            // 
+            this.adicionarAlterarRegistosToolStripMenuItem.Name = "adicionarAlterarRegistosToolStripMenuItem";
+            this.adicionarAlterarRegistosToolStripMenuItem.Size = new System.Drawing.Size(157, 20);
+            this.adicionarAlterarRegistosToolStripMenuItem.Text = "Adicionar/Alterar Registos";
+            this.adicionarAlterarRegistosToolStripMenuItem.Click += new System.EventHandler(this.AdicionarAlterarRegistosToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,6 +454,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolStripMenuItem estatisticasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adicionarAlterarRegistosToolStripMenuItem;
     }
 }
 
