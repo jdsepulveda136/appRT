@@ -34,13 +34,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_search_cli = new System.Windows.Forms.TextBox();
             this.txt_search_func = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lbox_clientes = new System.Windows.Forms.ListBox();
             this.lbox_func = new System.Windows.Forms.ListBox();
             this.data_registos = new System.Windows.Forms.DataGridView();
             this.bt_remove = new System.Windows.Forms.Button();
             this.bt_update = new System.Windows.Forms.Button();
             this.bt_sair = new System.Windows.Forms.Button();
+            this.txt_ano = new System.Windows.Forms.TextBox();
+            this.txt_mes = new System.Windows.Forms.TextBox();
+            this.lista_meses = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.data_registos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,13 +97,6 @@
             this.txt_search_func.Size = new System.Drawing.Size(150, 20);
             this.txt_search_func.TabIndex = 5;
             this.txt_search_func.TextChanged += new System.EventHandler(this.Txt_search_func_TextChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(428, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
             // 
             // lbox_clientes
             // 
@@ -159,18 +154,43 @@
             this.bt_sair.UseVisualStyleBackColor = true;
             this.bt_sair.Click += new System.EventHandler(this.Bt_sair_Click);
             // 
+            // txt_ano
+            // 
+            this.txt_ano.Location = new System.Drawing.Point(428, 30);
+            this.txt_ano.Name = "txt_ano";
+            this.txt_ano.Size = new System.Drawing.Size(100, 20);
+            this.txt_ano.TabIndex = 13;
+            // 
+            // txt_mes
+            // 
+            this.txt_mes.Location = new System.Drawing.Point(431, 76);
+            this.txt_mes.Name = "txt_mes";
+            this.txt_mes.Size = new System.Drawing.Size(100, 20);
+            this.txt_mes.TabIndex = 14;
+            // 
+            // lista_meses
+            // 
+            this.lista_meses.Location = new System.Drawing.Point(566, 30);
+            this.lista_meses.Name = "lista_meses";
+            this.lista_meses.Size = new System.Drawing.Size(48, 124);
+            this.lista_meses.TabIndex = 15;
+            this.lista_meses.UseCompatibleStateImageBehavior = false;
+            this.lista_meses.View = System.Windows.Forms.View.List;
+            // 
             // Form4AlteracaoDeRegistos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 562);
+            this.Controls.Add(this.lista_meses);
+            this.Controls.Add(this.txt_mes);
+            this.Controls.Add(this.txt_ano);
             this.Controls.Add(this.bt_sair);
             this.Controls.Add(this.bt_update);
             this.Controls.Add(this.bt_remove);
             this.Controls.Add(this.data_registos);
             this.Controls.Add(this.lbox_func);
             this.Controls.Add(this.lbox_clientes);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txt_search_func);
             this.Controls.Add(this.txt_search_cli);
             this.Controls.Add(this.label4);
@@ -194,12 +214,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_search_cli;
         private System.Windows.Forms.TextBox txt_search_func;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ListBox lbox_clientes;
         private System.Windows.Forms.ListBox lbox_func;
         private System.Windows.Forms.DataGridView data_registos;
         private System.Windows.Forms.Button bt_remove;
         private System.Windows.Forms.Button bt_update;
         private System.Windows.Forms.Button bt_sair;
+        private System.Windows.Forms.TextBox txt_ano;
+        private System.Windows.Forms.TextBox txt_mes;
+        private System.Windows.Forms.ListView lista_meses;
     }
 }

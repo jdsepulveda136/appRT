@@ -76,17 +76,21 @@ namespace appRT
                 string query = "select * from T_registo_de_tempos where cod_cliente = '" + cliente + "' and cod_funcionario = '" + funcionario + "'";
 
                 data_registos.DataSource = data.BuscaDados(ligabd, query);
+
+                MostraMes();
             }   
         }
 
         private void Lbox_clientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             AtualizaGrid();
+            MostraMes();
         }
 
         private void Lbox_func_SelectedIndexChanged(object sender, EventArgs e)
         {
             AtualizaGrid();
+            MostraMes();
         }
 
         //Botão de remoção de registos selecionados na gridview
@@ -102,6 +106,7 @@ namespace appRT
             data.BuscaDados(ligabd, query);
 
             AtualizaGrid();
+            
         }
 
         private void Bt_update_Click(object sender, EventArgs e)
@@ -116,12 +121,8 @@ namespace appRT
             DateTime data_nova = Convert.ToDateTime(data_ant);
 
             string query = "update T_registo_de_tempos " +
-                           $"set cod_cliente= {cliente} , cod_funcionario={func} , data= '{data_nova.ToShortDateString()}', tempo='{Convert.ToInt32(tempo)}', descritivo='{desc}' " +
+                           $"set cod_cliente= {cliente} , cod_funcionario={func} , data= '{data_nova.ToLocalTime().ToString("MM/dd/yyyy")}', tempo='{Convert.ToInt32(tempo)}', descritivo='{desc}' " +
                            $"where id={id}";
-
-            //string query = "update T_registo_de_tempos " +
-            //              $"set cod_cliente= {cliente} , cod_funcionario={func} , tempo={Convert.ToInt32(tempo)} , descritivo='{desc}' " +
-            //              $" where id={id}";
 
             MessageBox.Show(query);
 
@@ -130,6 +131,21 @@ namespace appRT
             data.BuscaDados(ligabd, query);
 
             AtualizaGrid();
+            
+        }
+
+        private void MostraMes()
+        {
+            int limite = data_registos.Rows.Count;
+           
+            for (int i = 0; i < limite - 1; i++)
+            {
+                String data_completa = data_registos.Rows[i].Cells[3].Value.ToString();
+                DateTime data = Convert.ToDateTime(data_completa);
+                string mes = Convert.ToString(data.Month);
+
+                lista_meses.Items.Add(Convert.ToString(data.Month));
+            }
         }
 
         private void Bt_sair_Click(object sender, EventArgs e)
