@@ -136,15 +136,29 @@ namespace appRT
 
         private void MostraMes()
         {
-            int limite = data_registos.Rows.Count;
-           
-            for (int i = 0; i < limite - 1; i++)
-            {
-                String data_completa = data_registos.Rows[i].Cells[3].Value.ToString();
-                DateTime data = Convert.ToDateTime(data_completa);
-                string mes = Convert.ToString(data.Month);
+            MyGetData executa_query = new MyGetData();
+            string ligabd = MyStringConnection.SC1;
 
-                lista_meses.Items.Add(Convert.ToString(data.Month));
+            if (lbox_clientes.SelectedIndex >= 0 && lbox_func.SelectedIndex >= 0)
+            {
+                string cliente = lbox_clientes.SelectedItem.ToString();
+                string func = lbox_func.SelectedItem.ToString();
+
+                string query = $"select distinct month(data) from T_registo_de_tempos where cod_cliente={cliente} and cod_funcionario={func}";
+
+                MessageBox.Show(query);
+
+                //DataTable dados = executa_query.BuscaDados(ligabd, query);
+
+                //foreach (DataRow row in dados.Rows)
+                //{
+                //    ListViewItem item = new ListViewItem(row[0].ToString());
+                //    for (int i = 1; i < dados.Columns.Count; i++)
+                //    {
+                //        item.SubItems.Add(row[i].ToString());
+                //    }
+                //    lista_meses.Items.Add(item);
+                //}
             }
         }
 
